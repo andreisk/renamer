@@ -18,7 +18,11 @@ for fo in os.listdir(): #get list of artist folders
                     if so != '.DS_Store':
                         print('Song')
                         print(so.encode('utf-8'))
-                        #add files w/ ' - ' to list to make sure it works
-                        #rename files
+                        if re.match(' - ', so): #add files w/ ' - ' to list to make sure it works
+                            rename.append(so)
+                            #rename files
                 os.chdir('..')
         os.chdir('..')
+
+for name in rename:
+    print(name)
